@@ -1,15 +1,16 @@
-import React from 'react';
 
+import { Link } from 'react-router-dom';
 const Dropdown = ({val1, val2, val3, val4, val5}) => {
     return (
         <>
           <li className="nav-item dropdown">
-                <a className="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">{val1}</a>
+            
+                <button className="nav-link dropdown-toggle btn" data-bs-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{val1}</button>
                 <div className="dropdown-menu">
-                  <a className="dropdown-item" href="#">{val2}</a>
-                  <a className="dropdown-item" href="#">{val3}</a>
-                  <a className="dropdown-item" href="#">{val4}</a>
-                  <a className="dropdown-item" href="#">{val5}</a>
+                  {/* <Link className="dropdown-item" to={"/category/1"}><button >{val2}</button></Link>
+                  <Link className="dropdown-item" to={"/category/2"}><button >{val3}</button></Link>
+                  <Link className="dropdown-item" to={"/category/3"}><button >{val4}</button></Link>
+                  <Link className="dropdown-item" to={"/category/4"}><button >{val5}</button></Link> */}
                 </div>
               </li>  
         </>
