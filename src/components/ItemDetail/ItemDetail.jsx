@@ -1,11 +1,10 @@
 import {useContext} from 'react';
-import { Link } from 'react-router-dom';
 import ItemCount from '../ItemCount/ItemCount';
 import { CartContext } from '../context/CartContext';
 import {toast} from "react-toastify"
 const ItemDetail = ({producto}) => {
 
-    const {cart, isInCart, addItem} = useContext(CartContext)
+    const {addItem} = useContext(CartContext)
 
     const onAdd = (contador) => {
         if (producto.stock === 0) {
@@ -27,7 +26,7 @@ const ItemDetail = ({producto}) => {
     return (
         <div className='row g-0'>
             <div className="col-md-4">
-                <img src={producto.img} className="img-fluid rounded-start" />
+                <img src={producto.img} className="img-fluid rounded-start" alt={producto.nombre}/>
             </div>
             <div className="col-md-8">
                 <div className="card-body">

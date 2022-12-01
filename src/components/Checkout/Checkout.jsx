@@ -7,8 +7,6 @@ import { getProducto, createOrdenCompra, actualizarProducto } from "../../assets
 
 const Checkout = () => {
 
-    const [error, setError] = useState();
-
     const [verificado, setVerificado] = useState({
         email: "",
         emailVerificado: ""
@@ -22,7 +20,7 @@ const Checkout = () => {
     const consultarFormulario = (e) => {
         e.preventDefault()
         if (verificado.email !== verificado.emailVerificado) {
-            setError(toast.error('Los emails no coinciden', {
+            toast.error('Los emails no coinciden', {
                 position: "top-center",
                 autoClose: 1500,
                 hideProgressBar: true,
@@ -31,12 +29,11 @@ const Checkout = () => {
                 draggable: true,
                 progress: undefined,
                 theme: "colored",
-                }))
+                })
         } else {
             const datForm = new FormData(datosFormulario.current)
             const valores = Object.fromEntries(datForm)
             console.log(valores);
-            setError("")
             const aux = [...cart]
             aux.forEach(producto => {
                 getProducto(producto.id)
