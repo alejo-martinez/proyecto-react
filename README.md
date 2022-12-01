@@ -23,7 +23,7 @@ _Este proyecto fue creado con el propósito de aprender la tecnología React Js,
 
 ## Screenshot
 
-![Captura de pantalla 1](https://drive.google.com/file/d/1qwdDbhF_NhjWL219lwcFdFba2m-9H3Ng/view?usp=share_link)
+![Captura de pantalla 1](https://drive.google.com/file/d/1qwdDbhF_NhjWL219lwcFdFba2m-9H3Ng/view)
 ![Captura de pantalla 2](https://drive.google.com/file/d/154zZ6vUYulLCj_fExtWZgv58uBaXgzBT/view?usp=share_link)
 ![Captura de pantalla 3](https://drive.google.com/file/d/1GdXDbr1iBbubS0luyrw7ghCAv-qxH7QJ/view?usp=share_link)
 ![Captura de pantalla 4](https://drive.google.com/file/d/1EcZtX8c7OKzNnyPNCLCWWiZOMl2XPsik/view?usp=share_link)
