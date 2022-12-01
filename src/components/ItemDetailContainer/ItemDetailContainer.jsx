@@ -1,26 +1,32 @@
-import {useEffect, useState} from 'react';
+import {useEffect, useState, useContext} from 'react';
 import { useParams } from 'react-router-dom';
 import ItemDetail from '../ItemDetail/ItemDetail';
-import { baseDeDatos } from '../../assets/funciones';
+import { getProducto } from '../../assets/firebase.js';
+
 
 const ItemDetailContainer = () => {
     const [producto, setProducto] = useState([]);
     const {id} = useParams()
 
+
     useEffect(() => {
-        baseDeDatos("../json/productos.json").then (productos => {
-        const prod = productos.find(arrayProducto => arrayProducto.id === parseInt(id))
+        getProducto(id).then (prod => {
         setProducto(prod)
         })
     }, []);
 
     return (
         <>
-            <div>
-            <div className=" card mb-3 container itemDetail">
-                <ItemDetail producto={producto}/>
-            </div>
-        </div>
+        {producto !== "Producto no encontrado" ? 
+                    <div>
+                    <div className=" card mb-3 container itemDetail">
+                        <ItemDetail producto={producto}/>
+                    </div>
+                </div>
+        :
+        <h1 className='p-cart text-center mt-3'>Producto no encontrado</h1>
+        }
+
         </>
     );
 }

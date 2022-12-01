@@ -4,10 +4,23 @@ import NavBar from './NavBar/NavBar';
 import ItemListContainer from './ItemListContainer/ItemListContainer';
 import ItemDetailContainer from './ItemDetailContainer/ItemDetailContainer';
 import Cart from './Cart/Cart';
+import { CartContextProvider } from './context/CartContext';
+import Checkout from './Checkout/Checkout';
+import Register from './Register/Register';
+import Login from './Login/Login';
+import { AuthProvider } from './context/authContext';
+import ProtectedRoute from './ProtectedRoute/ProtectedRoute';
+import {ToastContainer} from "react-toastify"
+import 'react-toastify/dist/ReactToastify.css';
+import Panel from './Panel/Panel';
+
 
 function App() {
   return (
     <>
+    <CartContextProvider>
+    <AuthProvider>
+
     <BrowserRouter>
     <NavBar />
     <Routes>
@@ -15,9 +28,23 @@ function App() {
       <Route path='/product/:id' element={<ItemDetailContainer/>}/>
       <Route path='/cart' element={<Cart/>}/>
       <Route path='/category/:category' element={<ItemListContainer/>}/>
-      
+    
+      <Route path='/checkout' element={
+        // <ProtectedRoute>
+          <Checkout/>
+        // </ProtectedRoute>
+      }/>
+      <Route path='/panel' element={<Panel/>} />
+      <Route path='*' element = {<h1 className='p-cart text-center mt-3'>Ruta no encontrada</h1>} />
+      <Route path='/product/*' element={<h1 className='p-cart text-center mt-3'>Producto no encontrado</h1>}/>
+       <Route path='/login' element={<Login />}/>
+      <Route path='/register' element={<Register />}/> 
     </Routes>
+    <ToastContainer />
     </BrowserRouter>
+    
+    </AuthProvider>
+    </CartContextProvider>
     </>
   );
 }

@@ -1,8 +1,8 @@
 .cardProducto {
     max-width: 18rem;
-    margin-top: 20px;
     margin-left: 30px;
     max-height: 500px;
+    margin-top: 20px;
 }
 
 .itemDetail {
@@ -14,4 +14,60 @@
     width: fit-content;
     margin-top: 8px;
 
+}
+
+.navegacion {
+    background: rgb(0,0,0);
+    background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(69,237,176,1) 0%, rgba(226,226,226,1) 100%);
+}
+
+h5 {
+    color: #2A305B ;
+}
+
+.color-text {
+    color: #3B4275 ;
+}
+
+.contenedor-fin {
+    background-color: #E7E2E2;
+    width: fit-content;
+    height: fit-content;
+    margin: auto;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    padding: 10px;
+    border-radius: 7px;
+    text-align: center;
+}
+
+label {
+    color: #E7E2E2;
+}
+
+.p-cart {
+    color: white;
+}
+
+.loginContainer {
+    text-align: center;
+    padding: 20px;
+    background: rgb(10,29,170);
+    background: linear-gradient(90deg, rgba(10,29,170,1) 0%, rgba(0,0,0,1) 100%, rgba(226,226,226,1) 100%);
+    width: 25%;
+    margin: auto;
+    margin-top: 4rem;
+    border-radius: 10px;
+}
+
+
+.formulario {
+    display: flex;
+    flex-flow: column;
+    width: fit-content;
+    margin: auto;
+}
+
+.cardLogin {
+   margin: auto;
 }
