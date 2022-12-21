@@ -1,4 +1,4 @@
-import { useContext, useState, createContext } from "react";
+import {  useState, createContext } from "react";
 import useLocalStorage from "../../assets/useLocalStorage";
 
 
@@ -35,13 +35,13 @@ const CartContextProvider = (props) => {
     const emptyCart = () => {
          setCart([])
          setStorage([])
-         return setCart && setStorage
+        //  return setCart, setStorage
     }
 
         const quitarProducto = (id) => {
             setCart(cart.filter(prod => prod.id !== id))
             setStorage(storage.filter(prod => prod.id !== id))
-            return setCart && setStorage
+            // return setCart, setStorage
         }
 
         const cantidadProductos = () => {
