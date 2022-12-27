@@ -7,7 +7,6 @@ const CartContext = createContext([])
 const CartContextProvider = (props) => {
     const [cart, setCart] = useState([]);
  
-
     const [storage, setStorage] = useLocalStorage("carrito", "")
 
     const isInCart = (id) =>{
@@ -45,7 +44,9 @@ const CartContextProvider = (props) => {
         }
 
         const cantidadProductos = () => {
-            return storage.reduce((acum, prod) => acum += prod.cant, 0)
+            if (storage !== undefined) {
+                return storage.reduce((acum, prod) => acum += prod.cant, 0)
+            }
         }
 
         
